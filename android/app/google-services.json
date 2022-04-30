@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1002014711784",
+    "project_id": "koran-57793",
+    "storage_bucket": "koran-57793.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002014711784:android:575a6dce3bc728e4100e5d",
+        "android_client_info": {
+          "package_name": "com.example.koran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002014711784-8h19g6sdnnsijuf9cqsvu97dfkfr45nq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYninVo-g1HMkbMiCKFp_z_Zf8dT7xiAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002014711784-8h19g6sdnnsijuf9cqsvu97dfkfr45nq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
