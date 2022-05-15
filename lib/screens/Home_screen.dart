@@ -12,12 +12,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedindex = 0;
 
-  // List<Widget> screens = [
-  //   HomeScreen(),
-  //   AddStudent(),
-  //   ResultsScreen()
-  // ];
-
 
   @override
   Widget build(BuildContext context) {
