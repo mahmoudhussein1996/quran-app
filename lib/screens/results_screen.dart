@@ -32,7 +32,7 @@ class ResultsScreen extends StatelessWidget {
       if(StudentCubit.get(context).allData.length == 0)
         return  Container(
             child: Center(
-                child: Text("لا يوجد معلومات لعرضها",style: normalstyle)));
+                child: Text("لا يوجد طلاب مضافة الي الان",style: normalstyle)));
       else
     return Column(
         children: [

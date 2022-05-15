@@ -30,9 +30,11 @@ class StudentInformation extends StatelessWidget {
     StudentCubit.get(context).getStudentByName(studentname);
     StudentCubit.get(context).getDegrresofStudent(studentid);
 
-    int dailydegree = 0, monthlydegree = 0,yearlydegree = 0, numofabsent = 0;
+    int dailydegree, monthlydegree = 0,yearlydegree = 0, numofabsent = 0;
 
-    String dailyvalue, monthlyvalue = '', yearlyvalue = '';
+    int Listofdegreesize = 1;
+
+    String dailyvalue = '', monthlyvalue = '', yearlyvalue = '';
 
     List<Degree> listOfMonthDegree = [];
     List<Degree> listOfyearDegree = [];
@@ -41,16 +43,24 @@ class StudentInformation extends StatelessWidget {
         appBar: AppBar(title: Text(studentname,style: normalstyle,),),
         body: SingleChildScrollView(
             child: BlocBuilder<StudentCubit, StudentState>(
-
                 builder: (context, state) {
                   if (state is getAllDegrreById)
                      {
                       numofabsent = StudentCubit.get(context).countNumOfAbsent(StudentCubit.get(context).studentDegrees);
 
 
-                        int Listofdegreesize = StudentCubit.get(context).studentDegrees.length;
-                        if(Listofdegreesize != 0) dailydegree = StudentCubit.get(context).studentDegrees[Listofdegreesize -1].degree;
-                          dailyvalue = StudentCubit.get(context).countValueOfStudentbyDegree(StudentCubit.get(context).studentDegrees[Listofdegreesize -1].degree);
+                       Listofdegreesize = StudentCubit.get(context).studentDegrees.length;
+
+                        if(Listofdegreesize > 0)
+                          {
+                            dailydegree = StudentCubit.get(context).studentDegrees[Listofdegreesize-1].degree;
+                            dailyvalue = StudentCubit.get(context).countValueOfStudentbyDegree(StudentCubit.get(context).studentDegrees[Listofdegreesize -1].degree);
+                          }
+                        else
+                          {
+                            dailydegree = 0;
+                          }
+
 
                          if(StudentCubit.get(context).studentDegrees.length >= 8)
                             {
@@ -119,7 +129,7 @@ class StudentInformation extends StatelessWidget {
                                        Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
-                                             Text(dailyvalue == null ? 'لا يوجد': dailyvalue,style: normalstyle,),
+                                             Text(dailyvalue =='' ? 'لا يوجد': dailyvalue,style: normalstyle,),
                                              Text('التقدير اليومي', style: titletext)
                                           ],
                                        ),

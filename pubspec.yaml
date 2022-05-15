@@ -36,6 +36,7 @@ dependencies:
   intl: ^0.17.0
   image_picker: ^0.8.4+10
   flutter_bloc: ^8.0.1
+  firebase_messaging: ^11.3.0
 
 
 dev_dependencies:
